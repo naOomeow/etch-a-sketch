@@ -5,11 +5,14 @@ const container = document.querySelector(`#container`);
 const innerContainer = document.createElement(`div`);
 innerContainer.classList.add(`innerContainer`);
 
+const buttonArea = document.createElement(`div`);
+buttonArea.classList.add(`buttonArea`);
 //button
 const inputButton = document.createElement(`button`);
 inputButton.classList.add(`Buttons`);
-inputButton.textContent = `Set Grid`;   
-container.appendChild(inputButton);
+inputButton.textContent = `Set Grid`;
+buttonArea.appendChild(inputButton);   
+container.appendChild(buttonArea);
 
 //number of rows x columns
 let rowsXcolumns = 16;
@@ -40,14 +43,21 @@ function addDivRow() {
 //repeat the function to make number of columns
 function addRowsandColums() { 
     //asking user input
-    const askUser = prompt(`Input the number of Rows X Column : `);
+    const askUser = parseInt(prompt(`Input the number of Rows X Column : `));
     //delete grid
     for (let i = 0; i < rowsXcolumns; i++){
     innerContainer.removeChild(innerContainer.lastChild);
     };
     //change rowsXcolumns to new value
-    rowsXcolumns = parseInt(askUser);
+    
+    rowsXcolumns = askUser;
     console.log(rowsXcolumns);
+
+    if (rowsXcolumns > 100) {
+        rowsXcolumns = 16;
+        alert(`Max 100 x 100 allowed!`);
+    };
+    
     //add the new grid 
     for (let i = 0; i < rowsXcolumns ; i++){
         addDivRow();
