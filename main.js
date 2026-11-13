@@ -50,13 +50,12 @@ function addRowsandColums() {
     };
     //change rowsXcolumns to new value
     
-    rowsXcolumns = askUser;
-    console.log(rowsXcolumns);
-
-    if (rowsXcolumns > 100) {
-        rowsXcolumns = 16;
+    if (askUser > 100) {
+        rowsXcolumns = rowsXcolumns;
         alert(`Max 100 x 100 allowed!`);
-    };
+    } else {
+        rowsXcolumns = askUser;
+    }
     
     //add the new grid 
     for (let i = 0; i < rowsXcolumns ; i++){
