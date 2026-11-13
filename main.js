@@ -32,8 +32,19 @@ function addDivRow() {
         const divRow = document.createElement(`div`);
         divRow.classList.add(`divGridRow`);
         divRow.addEventListener(`mouseenter`, (event) => {
-            event.target.classList.add(`divGridChange`);
+            function randomColor() {
+                let R = Math.floor(Math.random() * 255 + 1);
+                let G = Math.floor(Math.random() * 255 + 1);
+                let B = Math.floor(Math.random() * 255 + 1);
+                let color = `rgb(${R}, ${G}, ${B})`;
+                console.log(color);
+                event.target.setAttribute('style', `background-color: ${color}`);
+            };
+
+            randomColor();
         });
+
+
         divColumn.appendChild(divRow);
         
     };
