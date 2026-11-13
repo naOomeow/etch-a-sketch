@@ -27,7 +27,21 @@ Check your “elements” panel to see if the elements have actually shown up bu
 
 add console.log statements in your JavaScript to see if it’s actually being loaded
 
-PHASE 3. 
+3.    PHASE 3. 
+
 Set up a “hover” effect so that the grid divs change color when your mouse passes over them, leaving a (pixelated) trail through your grid like a pen would.
 
 Can use JS or Class Change.
+
+4. PHASE 4.
+
+Add a button on the top of the screen that will send the user a popup asking for the number of squares per side for the new grid.
+
+Once entered, the existing grid should be removed, and a new grid should be generated in the same total space as before
+
+so that you’ve got a new sketch pad. 
+
+Set the limit for the user input to a maximum of 100
+
+You should be able to enter 64 and have a brand new 64x64 grid pop up without changing the total amount of pixels used.
+
