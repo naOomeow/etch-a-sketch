@@ -44,23 +44,26 @@ function addDivRow() {
 function addRowsandColums() { 
     //asking user input
     const askUser = parseInt(prompt(`Input the number of Rows X Column : `));
-    //delete grid
-    for (let i = 0; i < rowsXcolumns; i++){
-    innerContainer.removeChild(innerContainer.lastChild);
-    };
+
     //change rowsXcolumns to new value
     
-    if (askUser > 100) {
-        rowsXcolumns = rowsXcolumns;
-        alert(`Max 100 x 100 allowed!`);
+    if (askUser > 100 || askUser <= 0 || isNaN(askUser) ){
+        alert(`Min 1 and Max 100 allowed!`);
     } else {
+            //delete grid
+        for (let i = 0; i < rowsXcolumns; i++){
+            innerContainer.removeChild(innerContainer.lastChild);
+        };
+
         rowsXcolumns = askUser;
+
+        //add the new grid 
+        for (let i = 0; i < rowsXcolumns ; i++){
+            addDivRow();
+        };
     };
     
-    //add the new grid 
-    for (let i = 0; i < rowsXcolumns ; i++){
-        addDivRow();
-    };
+
     
 };
 
