@@ -55,7 +55,7 @@ function addRowsandColums() {
         alert(`Max 100 x 100 allowed!`);
     } else {
         rowsXcolumns = askUser;
-    }
+    };
     
     //add the new grid 
     for (let i = 0; i < rowsXcolumns ; i++){

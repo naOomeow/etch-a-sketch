@@ -36,8 +36,9 @@ button{
 }
 
 .innerContainer{
-    display: inline-flexbox;
-
+    display: inline-block;
+    width: 700px;
+    height: 700px;
 }
 
 
@@ -46,6 +47,7 @@ button{
     flex-direction: row;
     
     height: auto;
+    width: 100%;
     
     justify-content: center;
     align-items: center;
@@ -53,8 +55,9 @@ button{
 }
 
 .divGridRow{
-    height: 1em;
-    width: 1em;
+    aspect-ratio: 1 / 1;
+
+    flex: 1;
     background-color: #f0f8ff;
     border: 0.1px solid ;
 
