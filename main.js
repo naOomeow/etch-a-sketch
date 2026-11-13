@@ -33,9 +33,9 @@ function addDivRow() {
         divRow.classList.add(`divGridRow`);
         divRow.addEventListener(`mouseenter`, (event) => {
             function randomColor() {
-                let R = Math.floor(Math.random() * 255 + 1);
-                let G = Math.floor(Math.random() * 255 + 1);
-                let B = Math.floor(Math.random() * 255 + 1);
+                let R = Math.round(Math.random() * 255 );
+                let G = Math.round(Math.random() * 255 );
+                let B = Math.round(Math.random() * 255 );
                 let color = `rgb(${R}, ${G}, ${B})`;
                 console.log(color);
                 event.target.setAttribute('style', `background-color: ${color}`);
