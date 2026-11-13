@@ -27,3 +27,7 @@ Check your “elements” panel to see if the elements have actually shown up bu
 
 add console.log statements in your JavaScript to see if it’s actually being loaded
 
+PHASE 3. 
+Set up a “hover” effect so that the grid divs change color when your mouse passes over them, leaving a (pixelated) trail through your grid like a pen would.
+
+Can use JS or Class Change.
