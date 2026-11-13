@@ -7,15 +7,24 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 #container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background-color: rgb(121, 79, 79);
-    height: auto;
-    width: auto;
+    height: 200px;
+    width: 200px;
 
     padding: 10px;
-    
+}
+
+#innerContainer{
+    height: auto;
+    width: auto;
 }
 
 
