@@ -1,7 +1,6 @@
 # etch-a-sketch
 
 PROJECT COMPLETE.
-REMIANING: OPTIONAL Extra credit.
 
 ETCH A SKETCH PROJECT.
 
@@ -49,3 +48,7 @@ Set the limit for the user input to a maximum of 100
 
 You should be able to enter 64 and have a brand new 64x64 grid pop up without changing the total amount of pixels used.
 
+Last Additional.
+Color Random 
+and 
+Darkening

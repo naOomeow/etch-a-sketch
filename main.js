@@ -31,8 +31,9 @@ function addDivRow() {
     for (let i = 0; i < rowsXcolumns ; i++){
         const divRow = document.createElement(`div`);
         divRow.classList.add(`divGridRow`);
-        //brightness will -20 every touch
-        let brigtness = 100;
+        //brightness will -20 every pointer hover
+        //kept outside so each div has its own value to change
+        let brightness = 100;
         divRow.addEventListener(`mouseenter`, (event) => {
             //set random color from array
             const colors = [`red`, `green`, `blue`];
@@ -44,21 +45,20 @@ function addDivRow() {
                 event.target.classList.add(colors[setColor]);
             };
 
-            //to check if already hovered
-            let getClass = event.target.getAttribute(`class`);
+            //to check if div already has color
+            let getClass = colors.some(item => event.target.classList.contains(item));
             console.log(getClass);
-
-            //changes brigtness count of each div
-            if (brigtness > 0) {
-                brigtness -= 20;    
-            };
             
-            //if class is already present lower brigtness
-            if (event.target.classList.contains(getClass)) {
+            //if class is already present lower brightness
+            //if no color is present add it 
+            if (!getClass) {
                 setColor();    
             } else {
-                event.target.style.filter = `brightness(${brigtness}%)`;
-                console.log(brigtness);
+                if (brightness > 0) {
+                    brightness -= 20;    
+                };
+                event.target.style.filter = `brightness(${brightness}%)`;
+                console.log(brightness);
             };
             
             
