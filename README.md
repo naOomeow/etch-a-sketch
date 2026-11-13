@@ -1,7 +1,7 @@
 # etch-a-sketch
 
 PROJECT COMPLETE.
-REMIANING: OPTIONAL Extra credit.
+Including Extra credit.
 
 ETCH A SKETCH PROJECT.
 
