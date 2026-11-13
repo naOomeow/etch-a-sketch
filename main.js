@@ -31,18 +31,33 @@ function addDivRow() {
     for (let i = 0; i < rowsXcolumns ; i++){
         const divRow = document.createElement(`div`);
         divRow.classList.add(`divGridRow`);
+
+        let brightness = 100;
         divRow.addEventListener(`mouseenter`, (event) => {
+
             function randomColor() {
+
                 let R = Math.round(Math.random() * 255 );
                 let G = Math.round(Math.random() * 255 );
                 let B = Math.round(Math.random() * 255 );
                 let color = `rgb(${R}, ${G}, ${B})`;
                 console.log(color);
-                event.target.setAttribute('style', `background-color: ${color}`);
+                event.target.style.backgroundColor = `${color}` ;
+                return color;
             };
-
-            randomColor();
-        });
+            
+            if (!event.target.style.backgroundColor) {
+                randomColor()    
+            } else {
+                if (brightness > 0) {
+                    brightness -= 10;    
+                };
+                
+                event.target.style.filter = `brightness(${brightness}%)`;
+            }
+            
+            
+});
 
 
         divColumn.appendChild(divRow);
