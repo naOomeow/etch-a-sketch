@@ -5,6 +5,12 @@ const container = document.querySelector(`#container`);
 const innerContainer = document.createElement(`div`);
 innerContainer.classList.add(`innerContainer`);
 
+//button
+const inputButton = document.createElement(`button`);
+inputButton.classList.add(`Buttons`);
+inputButton.textContent = `Set Grid`;   
+container.appendChild(inputButton);
+
 //number of rows x columns
 let rowsXcolumns = 16;
 
@@ -19,7 +25,7 @@ function addDivRow() {
     innerContainer.appendChild(divColumn);
     
     //add row div boxes to the columns
-    for (let i = 0; i < rowsXcolumns; i++){
+    for (let i = 0; i < rowsXcolumns ; i++){
         const divRow = document.createElement(`div`);
         divRow.classList.add(`divGridRow`);
         divRow.addEventListener(`mouseenter`, (event) => {
@@ -32,6 +38,34 @@ function addDivRow() {
 };
 
 //repeat the function to make number of columns
-for (let i = 0; i < rowsXcolumns; i++){
-    addDivRow();
+function addRowsandColums() { 
+    //asking user input
+    const askUser = prompt(`Input the number of Rows X Column : `);
+    //delete grid
+    for (let i = 0; i < rowsXcolumns; i++){
+    innerContainer.removeChild(innerContainer.lastChild);
+    };
+    //change rowsXcolumns to new value
+    rowsXcolumns = parseInt(askUser);
+    console.log(rowsXcolumns);
+    //add the new grid 
+    for (let i = 0; i < rowsXcolumns ; i++){
+        addDivRow();
+    };
+    
 };
+
+//when page loads
+function firstInit() {
+    for (let i = 0; i < rowsXcolumns ; i++){
+        addDivRow();
+    };
+    
+};
+
+firstInit();
+
+
+inputButton.addEventListener(`click`, () => {
+    addRowsandColums()
+});
